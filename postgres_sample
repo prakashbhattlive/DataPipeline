@@ -1,0 +1,19 @@
+CREATE USER prohub WITH PASSWORD 'xxxxxxxxxx';
+SELECT current_user, session_user;
+SET role prohub;
+SELECT current_database();
+
+postgres=> \du  --> to check user& permission
+
+postgres=> \l  --> to list databases
+
+\c prohub  --> switch to prohub database
+
+prohub=# \dt --> list all tables
+
+
+ SELECT 
+  (data->>'log')::jsonb->>'name' AS name, 
+  (data->>'log')::jsonb->'address'->>'street' AS street,
+  jsonb_array_elements((data->>'log')::jsonb->'phoneNumbers')->>'number' AS number
+FROM mseedr;
