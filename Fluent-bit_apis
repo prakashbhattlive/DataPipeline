@@ -1,0 +1,7 @@
+curl -s http://127.0.0.1:2020/api/v1/metrics | jq
+curl -s http://127.0.0.1:2020/api/v1/uptime | jq
+curl -s http://127.0.0.1:2020 | jq
+curl -s http://127.0.0.1:2020/api/v1/storage|jq
+curl -s http://127.0.0.1:2020/api/v1/metrics/prometheus
+curl -s http://127.0.0.1:2020/api/v2/metrics/
+curl -s http://127.0.0.1:2020/api/v1/health
