@@ -1,0 +1,23 @@
+[INPUT]
+    name              tail
+    tag               mse-edr
+    path              
+    Refresh_Interval  5
+    DB                
+    Mem_Buf_Limit     5MB
+    Skip_Long_Lines   On
+    Ignore_Older      1h
+    Exclude_Path      *.gz,*.zip
+
+
+[OUTPUT]
+    Name        pgsql
+    Match       mse-edr
+    Host        127.0.0.1
+    Port        5432
+    Database    
+    User       
+    Password    
+    Table       mseedr
+    Format      json
+    Column      data
